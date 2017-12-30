@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/joltdb/jolt"
+	"github.com/jasonmain/joltDB"
 )
 
 type User struct {
