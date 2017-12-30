@@ -1,4 +1,4 @@
-package jolt
+package joltDB
 
 import (
 	"github.com/boltdb/bolt"
