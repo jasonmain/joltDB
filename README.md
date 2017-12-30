@@ -3,7 +3,7 @@ An api written in Go to simplify working with boltdb/bolt. Jolt saves structs as
 
 Please have a look at the example.
 
-# Usage:
+# Usage
 
 ```package main
 
