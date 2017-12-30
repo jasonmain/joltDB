@@ -5,8 +5,7 @@ Please have a look at the example.
 
 # Usage:
 
-// 
-package main
+```package main
 
 import (
 	"fmt"
@@ -76,3 +75,4 @@ func main() {
 	fmt.Printf("User List By Range:\n\r%s\n\r\n\r", userListRange)
 	fmt.Printf("User List By Prefix:\n\r%s", userListPrefix)
 }
+```
