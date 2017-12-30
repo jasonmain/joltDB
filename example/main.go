@@ -15,7 +15,7 @@ func main() {
 
 	// Open boltDB database in working dir.
 	// If one isn't there it will be created.
-	jolt.Open("./data.db")
+	joltDB.Open("./data.db")
 
 	// Add some users.
 	users := []*User{
@@ -29,35 +29,35 @@ func main() {
 	// Save users.
 	for _, user := range users {
 		// With simple key
-		if err := jolt.Save("users", user.ID, user); err != nil {
+		if err := joltDB.Save("users", user.ID, user); err != nil {
 			fmt.Println(err)
 		}
 		// With a prefixed key.
-		if err := jolt.Save("users", user.Name+":"+user.ID, user); err != nil {
+		if err := joltDB.Save("users", user.Name+":"+user.ID, user); err != nil {
 			fmt.Println(err)
 		}
 	}
 
 	// Get one user.
-	getUser, err := jolt.GetOne("users", "103")
+	getUser, err := joltDB.GetOne("users", "103")
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	// Get full user list.
-	userList, err := jolt.List("users")
+	userList, err := joltDB.List("users")
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	// Get user list by range.
-	userListRange, err := jolt.ListRange("users", "101", "103")
+	userListRange, err := joltDB.ListRange("users", "101", "103")
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	// Get user list by Prefix.
-	userListPrefix, err := jolt.ListPrefix("users", "K")
+	userListPrefix, err := joltDB.ListPrefix("users", "K")
 	if err != nil {
 		fmt.Println(err)
 	}
